@@ -1,5 +1,16 @@
 <?php
 
+
+/**
+ * Class Object
+ *
+ * Get Database Details
+ *
+ * @author Jarrod Sampson
+ * @copyright 2015 Planlodge
+ *
+ */
+
 class AccessObject
 {
 
