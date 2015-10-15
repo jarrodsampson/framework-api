@@ -1,5 +1,12 @@
 <?php
 
+
+/*
+ * 
+ * Queryies from MySQL
+ * 
+ */
+
 class Queries
 {
     public function fetchAllFrameworks()
