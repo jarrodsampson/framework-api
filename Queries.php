@@ -1,6 +1,4 @@
 <?php
-
-
 /*
  * 
  * Queryies from MySQL
