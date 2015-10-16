@@ -35,18 +35,18 @@
             display: flex;
             min-height: 100vh;
             flex-direction: column;
-            background-image:url(img/background.jpg);
-background-attachment:fixed;
-background-repeat:no-repeat;
-background-position:center right;
+            background-image: url(img/background.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center right;
         }
-
+        
         nav .brand-logo {
             margin-left: 1em;
         }
-
+        
         nav {
-           box-shadow:1px 2px 14px 1px #333;
+            box-shadow: 1px 2px 14px 1px #333;
         }
         
         main {
@@ -56,68 +56,68 @@ background-position:center right;
         .card {
             width: 30%;
             float: left;
-			margin:0.7em;
+            margin: 0.7em;
         }
-
+        
         #fadeBottom {
-            width:100%;
-            height:1px;
-            background:black;
-            position:fixed;
+            width: 100%;
+            height: 1px;
+            background: black;
+            position: fixed;
             bottom: 0;
             left: 0;
             box-shadow: 1px 1px 15px 2px #000;
             z-index: 999999;
         }
-		
-		.spinner {
-			width:100%;
-			height:100%;
-			position:fixed;
-			top:35%;
-			left:45%;
-			z-index:9999;
-		}
-		
-		.overlay {
-			width:100%;
-			height:100%;
-			position:fixed;
-			top:0;
-			left:0;
-			background:rgba(255,255,255,0.8);
-			z-index:999;
-		}
-		
-		.form-div {
-			max-width:600px;
-		}
-		
-		.fade.ng-hide {
-		  opacity: 0;
-		}
-
-		.fade.ng-hide-remove,
-		.fade.ng-hide-add {
-		  display: block !important;
-		}
-
-		.fade.ng-hide-remove {
-		  transition: all linear 500ms;
-		}
-
-		.fade.ng-hide-add {
-		  transition: all linear 500ms;
-		}
-		
-		.checkboxList {
-			border:1px solid #000;
-			background-color:#fff; 
-			color:#000;
-			width:300px; 
-			height: 100px; 
-			overflow-y: scroll;
-		}
+        
+        .spinner {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 35%;
+            left: 45%;
+            z-index: 9999;
+        }
+        
+        .overlay {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 999;
+        }
+        
+        .form-div {
+            max-width: 600px;
+        }
+        
+        .fade.ng-hide {
+            opacity: 0;
+        }
+        
+        .fade.ng-hide-remove,
+        .fade.ng-hide-add {
+            display: block !important;
+        }
+        
+        .fade.ng-hide-remove {
+            transition: all linear 500ms;
+        }
+        
+        .fade.ng-hide-add {
+            transition: all linear 500ms;
+        }
+        
+        .checkboxList {
+            border: 1px solid #000;
+            background-color: #fff;
+            color: #000;
+            width: 300px;
+            height: 100px;
+            overflow-y: scroll;
+        }
     </style>
 
 </head>
@@ -135,11 +135,11 @@ background-position:center right;
                 <a href="#" class="brand-logo">Frameworks</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down teal">
-				    <li><a class="" ng-click='showFrameworks()'>Frameworks</a></li>
+                    <li><a class="" ng-click='showFrameworks()'>Frameworks</a></li>
                     <li><a class="modal-trigger" href="#modal1">Tags</a></li>
                     <li><a ng-click='showAboutAPI()'>About</a></li>
                     <li><a ng-click='showForm()'>Add</a></li>
-					<li><a ng-click='showFormDelete()'>Delete</a></li>
+                    <li><a ng-click='showFormDelete()'>Delete</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><a href="sass.html">Sass</a></li>
@@ -153,7 +153,7 @@ background-position:center right;
 
     <main>
         <div class="container" ng-cloak>
-			<!--
+            <!--
             <section class="col s12 l12 m12">
 
                 <h3><a name="example5" class="page-anchor">GitHub Search API</a></h3>
@@ -170,188 +170,192 @@ background-position:center right;
             </section>
 			-->
             <section class="col s12 l12 m12">
-			
-				
-			</section>
+
+
+            </section>
 
             <section ng-show="showFrameworksTrue" class="col s12 l12 m12 fade">
-			
-				<p>Currently there are {{frameCount}} frameworks!<p>
-				<p>
-					<a class="btn" ng-click='toggleOptions()'><i class="material-icons small">search</i></a>
-					<a class="btn dropdown-button" data-activates="dropdown1"><i class="material-icons small">view_list</i></a>
-					<ul id="dropdown1" class="dropdown-content">
-					  <li><a ng-click='showFrameworkTableList()'>Table</a></li>
-					  <li class="divider"></li>
-					  <li><a ng-click='showFrameworkBoxList()'>Boxes</a></li>
-					</ul>
-				
-				</p>
 
-                <br />
-                <div ng-show="showOptionsFramework" class="row">
-                    <div class="col 13 m3 s12">
+                <p>Currently there are {{frameCount}} frameworks!
+                    <p>
+                        <p>
+                            <a class="btn" ng-click='toggleOptions()'><i class="material-icons small">search</i></a>
+                            <a class="btn dropdown-button" data-activates="dropdown1"><i class="material-icons small">view_list</i></a>
+                            <ul id="dropdown1" class="dropdown-content">
+                                <li><a ng-click='showFrameworkTableList()'>Table</a></li>
+                                <li class="divider"></li>
+                                <li><a ng-click='showFrameworkBoxList()'>Boxes</a></li>
+                            </ul>
 
-                        <label for="search">Items Per Page: {{quantity}}</label>
-                        <input type="number" min="1" value="10" class="form-control" ng-model="quantity">
+                        </p>
 
+                        <br />
+                        <div ng-show="showOptionsFramework" class="row">
+                            <div class="col 13 m3 s12">
 
-                    </div>
-
-                    <div class="input-field col 13 m3 s12">
-                        <i class="material-icons prefix">search</i>
-                        <input id="framework" type="text" ng-model="searchQuery">
-                        <label for="search">Search:</label>
-                    </div>
-                </div>
+                                <label for="search">Items Per Page: {{quantity}}</label>
+                                <input type="number" min="1" value="10" class="form-control" ng-model="quantity">
 
 
-                <div ng-show="showFrameworkBoxes" class="" ng-repeat="x in frameworks | filter:searchQuery | limitTo:quantity">
+                            </div>
 
-
-                    <div class="card small col 13 m3 s3 hoverable">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <i class="large material-icons">supervisor_account</i>
+                            <div class="input-field col 13 m3 s12">
+                                <i class="material-icons prefix">search</i>
+                                <input id="framework" type="text" ng-model="searchQuery">
+                                <label for="search">Search:</label>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4 truncate">{{x.framework}}<i class="material-icons right">more_vert</i></span>
-                            <p><a href="{{x.link}}" target="_blank">Website</a></p>
-							
+
+
+                        <div ng-show="showFrameworkBoxes" class="" ng-repeat="x in frameworks | filter:searchQuery | limitTo:quantity">
+
+
+                            <div class="card small col 13 m3 s3 hoverable">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <i class="large material-icons">supervisor_account</i>
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4 truncate">{{x.framework}}<i class="material-icons right">more_vert</i></span>
+                                    <p><a href="{{x.link}}" target="_blank">Website</a></p>
+
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">{{x.framework}}<i class="material-icons right">close</i></span>
+                                    <p>{{x.description}}</p>
+                                    <p>
+                                        <div class="chip">{{x.language}} <i class="material-icons">close</i></div>
+                                    </p>
+                                </div>
+                            </div>
+
+
                         </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">{{x.framework}}<i class="material-icons right">close</i></span>
-                            <p>{{x.description}}</p>
-							<p><div class="chip">{{x.language}} <i class="material-icons">close</i></div></p>
+
+                        <div ng-show="showFrameworkTable" class="">
+
+
+                            <table class="highlight responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th data-field="">Framework</th>
+                                        <th data-field="">Language</th>
+                                        <th data-field="">Website</th>
+                                        <th data-field="">Options</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr id="st" ng-repeat="x in frameworks | filter:searchQuery | limitTo:quantity" repeat-done="initModals()">
+                                        <td>{{x.framework}}</td>
+                                        <td>{{x.language}}</td>
+                                        <td>{{x.link}}</td>
+                                        <td><a class="btn waves-effect waves-light modal-trigger" href="#modal22">Edit</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
                         </div>
+
+            </section>
+
+
+
+            <section ng-hide="formAddFramework" class="col s12 l6 m6 fade">
+
+                <form name="addFrame" class="col s12 form-div" novalidate>
+                    <div class="row">
+                        <h3>Add Framework</h3>
+                        <div class="input-field col s6 l6 m6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="framework" type="text" ng-model="user.framework" required>
+                            <label for="framework">Framework</label>
+                        </div>
+                        <div class="input-field col s6 l6 m6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="language" type="text" class="validate" ng-model="user.language" required>
+                            <label for="language">Language</label>
+                        </div>
+                        <div class="input-field col s12 l12 m12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="link" type="url" class="validate" ng-model="user.link" required>
+                            <label for="link" data-error="URL" data-success="right">Link</label>
+                        </div>
+                        <div class="input-field col s12 l12 m12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <textarea id="description" class="materialize-textarea" ng-model="user.description" required></textarea>
+                            <label for="description">Description</label>
+                        </div>
+                        <button ng-disabled="addFrame.$invalid" type="submit" class="waves-effect waves-light btn tooltipped" ng-click='addFramework()' data-position="right" data-tooltip="Add New Framework"><i class="material-icons left">cloud</i>Add Framework</button>
                     </div>
+                </form>
 
-  
-				</div>
-				
-				<div ng-show="showFrameworkTable" class="">
+            </section>
 
 
-                    <table class="highlight responsive-table">
-					<thead>
-					  <tr>
-						  <th data-field="">Framework</th>
-						  <th data-field="">Language</th>
-						  <th data-field="">Website</th>
-						  <th data-field="">Options</th>
-					  </tr>
-					</thead>
+            <section ng-hide="formDeleteFramework" class="col s12 l6 m6 fade">
 
-					<tbody>
-					  <tr id="st" ng-repeat="x in frameworks | filter:searchQuery | limitTo:quantity" repeat-done="initModals()">
-						<td>{{x.framework}}</td>
-						<td>{{x.language}}</td>
-						<td>{{x.link}}</td>
-						<td><a class="btn waves-effect waves-light modal-trigger" href="#modal22">Edit</a></td>
-					  </tr>
-					</tbody>
-				  </table>
+                <form name="delFrame" class="col s12 form-div" novalidate>
+                    <div class="row">
+                        <h3>Delete Framework</h3>
+                        <div class="input-field col s12 l12 m12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="frameworkD" type="text" ng-model="user.frameworkD" required>
+                            <label for="frameworkD">Framework</label>
+                        </div>
+                        <button type="submit" ng-disabled="delFrame.$invalid" class="waves-effect waves-light btn tooltipped" ng-click='deleteFramework()' data-position="right" data-tooltip="Delete This Framework"><i class="material-icons left">cloud</i>Delete Framework</button>
+                    </div>
+                </form>
 
-  
-				</div>
+            </section>
 
-        </section>
-		
-		
+            <section ng-show="aboutAPI" class="col s12 l6 m6 fade">
 
-        <section ng-hide="formAddFramework" class="col s12 l6 m6 fade">
-
-            <form name="addFrame" class="col s12 form-div" novalidate>
                 <div class="row">
-					<h3>Add Framework</h3>
-                    <div class="input-field col s6 l6 m6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="framework" type="text" ng-model="user.framework" required>
-                        <label for="framework">Framework</label>
-                    </div>
-                    <div class="input-field col s6 l6 m6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="language" type="text" class="validate" ng-model="user.language" required>
-                        <label for="language">Language</label>
-                    </div>
-                    <div class="input-field col s12 l12 m12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="link" type="url" class="validate" ng-model="user.link" required>
-                        <label for="link" data-error="URL" data-success="right">Link</label>
-                    </div>
-                    <div class="input-field col s12 l12 m12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <textarea id="description" class="materialize-textarea" ng-model="user.description" required></textarea>
-                        <label for="description">Description</label>
-                    </div>
-                    <button ng-disabled="addFrame.$invalid" type="submit" class="waves-effect waves-light btn tooltipped" ng-click='addFramework()' data-position="right" data-tooltip="Add New Framework"><i class="material-icons left">cloud</i>Add Framework</button>
+                    <div class="col s12">
+                        <h1 class="center-align">TechConsume API</h1></div>
                 </div>
-            </form>
 
-        </section>
-
-
-        <section ng-hide="formDeleteFramework" class="col s12 l6 m6 fade">
-
-            <form name="delFrame" class="col s12 form-div" novalidate>
                 <div class="row">
-					<h3>Delete Framework</h3>
-                    <div class="input-field col s12 l12 m12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="frameworkD" type="text" ng-model="user.frameworkD" required>
-                        <label for="frameworkD">Framework</label>
+
+                    <div class="col s4">
+                        <!-- Promo Content 1 goes here -->
+                        <p class="center-align"><i class="large material-icons">insert_chart</i></p>
+                        <h3 class="center-align">Fast Lightning</h3>
+                        <p class="center-align">Content of the Century</p>
                     </div>
-                    <button type="submit" ng-disabled="delFrame.$invalid" class="waves-effect waves-light btn tooltipped" ng-click='deleteFramework()' data-position="right" data-tooltip="Delete This Framework"><i class="material-icons left">cloud</i>Delete Framework</button>
+                    <div class="col s4">
+                        <!-- Promo Content 2 goes here -->
+                        <p class="center-align"><i class="large material-icons">insert_chart</i></p>
+                        <h3 class="center-align">Fast Lightning</h3>
+                        <p class="center-align">Content of the Century</p>
+                    </div>
+                    <div class="col s4">
+                        <!-- Promo Content 3 goes here -->
+                        <p class="center-align"><i class="large material-icons">insert_chart</i></p>
+                        <h3 class="center-align">Fast Lightning</h3>
+                        <p class="center-align">Content of the Century</p>
+                    </div>
+
                 </div>
-            </form>
 
-        </section>
+                <div class="row">
 
-<section ng-show="aboutAPI" class="col s12 l6 m6 fade">
-
-<div class="row">
-      <div class="col s12"><h1 class="center-align">TechConsume API</h1></div>
-</div>
-
-<div class="row">
-
-      <div class="col s4">
-        <!-- Promo Content 1 goes here -->
-<p class="center-align"><i class="large material-icons">insert_chart</i></p>
-<h3 class="center-align">Fast Lightning</h3>
-<p class="center-align">Content of the Century</p>
-      </div>
-      <div class="col s4">
-        <!-- Promo Content 2 goes here -->
-<p class="center-align"><i class="large material-icons">insert_chart</i></p>
-<h3 class="center-align">Fast Lightning</h3>
-<p class="center-align">Content of the Century</p>
-      </div>
-      <div class="col s4">
-        <!-- Promo Content 3 goes here -->
-<p class="center-align"><i class="large material-icons">insert_chart</i></p>
-<h3 class="center-align">Fast Lightning</h3>
-<p class="center-align">Content of the Century</p>
-      </div>
-
-</div>
-
-<div class="row">
-
-<div class="col s4 offset-s4"></div>
+                    <div class="col s4 offset-s4"></div>
 
 
-<div class="col s4">
-<p class="center-align">
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra 
-</p>
-</div>
+                    <div class="col s4">
+                        <p class="center-align">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                        </p>
+                    </div>
 
-<div class="col s4 offset-s4"></div>
+                    <div class="col s4 offset-s4"></div>
 
-</div>
+                </div>
 
-            
-</section>
+
+            </section>
 
         </div>
     </main>
@@ -365,69 +369,71 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
         </div>
     </footer>
 
-	<!-- Modal Structure -->
-  <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Framework Tags</h4>
-      <p>
-	  
-			<div ng-repeat="x in frameworks" class="chip">{{x.framework}} <i class="material-icons">close</i></div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal bottom-sheet">
+        <div class="modal-content">
+            <h4>Framework Tags</h4>
+            <p>
 
-	  
-	  </p>
+                <div ng-repeat="x in frameworks" class="chip">{{x.framework}} <i class="material-icons">close</i></div>
+
+
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+
+    <div id="modal22" class="modal">
+        <div class="modal-content">
+            <h4>Framework Tags</h4>
+            <p>
+
+                <div ng-repeat="x in frameworks" class="chip">{{x.framework}} <i class="material-icons">close</i></div>
+
+
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
     </div>
-  </div>
-  
-  <div id="modal22" class="modal">
-    <div class="modal-content">
-      <h4>Framework Tags</h4>
-      <p>
-	  
-			<div ng-repeat="x in frameworks" class="chip">{{x.framework}} <i class="material-icons">close</i></div>
 
-	  
-	  </p>
+
+    <div class="overlay"></div>
+    <div class="spinner">
+
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large teal">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
     </div>
-  </div>
-  
 
-  <div class="overlay"></div>
-  <div class="spinner">
-  
-	 <div class="preloader-wrapper big active">
-		<div class="spinner-layer spinner-green-only">
-		  <div class="circle-clipper left">
-			<div class="circle"></div>
-		  </div><div class="gap-patch">
-			<div class="circle"></div>
-		  </div><div class="circle-clipper right">
-			<div class="circle"></div>
-		  </div>
-		</div>
-	  </div>
-  
-  </div>
-
-   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large teal">
-      <i class="large material-icons">mode_edit</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-  </div>
-
-  <!-- Page lights -->
-  <div id="fadeBottom"></div>
+    <!-- Page lights -->
+    <div id="fadeBottom"></div>
 
 
 
@@ -435,7 +441,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-touch.min.js"></script>
-	<script src="js/libs/angular-animate.min.js"></script>
+    <script src="js/libs/angular-animate.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/libs/angucomplete-alt.js"></script>
     <script src="js/app.js"></script>
