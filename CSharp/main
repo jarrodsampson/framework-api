@@ -1,0 +1,201 @@
+/*
+ * User: jsampson
+ * Date: 10/28/2015
+ * Time: 11:22 AM
+ * 
+ */
+using System;
+using System.Net;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+
+namespace TestApp
+{
+	
+	class Program
+	{
+		
+		private const string downloadString = "http://planlodge.com/techconsume/frameworks/json/v1/";
+		
+		public static void Main(string[] args)
+		{
+			
+			// get data feed contents
+			JObject results = downloadJSON();
+			
+			// display JSON feed
+			showAllResults(results);
+			
+		}
+		
+		/*
+		 * 	Grab Client Data into the application
+		 */
+		private static JObject downloadJSON()
+		{
+			// Grabbing JSON Data
+			WebClient wc = new WebClient();
+			JObject json = null;
+			String jsonItems = null;
+			
+			try 
+			{
+				jsonItems = wc.DownloadString(downloadString);
+
+			}
+			catch (WebException ex)
+			{
+				Console.WriteLine("Error 5691: Network Error has Occurred. Please Contact Administrator.\nSystem Will exit now.");
+				Console.Write("Press any key to continue . . . \n\n");
+				Console.ReadKey(true);
+				Environment.Exit(0);
+			}
+			
+			json = (JObject)JsonConvert.DeserializeObject(jsonItems);
+
+			return json;
+		}
+		
+		/*
+		 * 	GET request for framework search
+		 */
+		private static JObject downloadSearch(String searchQuery)
+		{
+			// Grabbing JSON Data
+			WebClient wc = new WebClient();
+			var json = (JObject)JsonConvert.DeserializeObject(wc.DownloadString(downloadString + searchQuery + "/"));
+
+			return json;
+		}
+		
+		/*
+		 * 	DRY Prevention on Data Loop
+		 */
+		public static void showAllResults(JObject results)
+		{
+			//Console.WriteLine(results["data"].ToString());
+			if (results["data"].ToString().Trim().Equals("No Framework Found"))
+            {
+				Console.WriteLine(noResultsFramework());
+            	startMenu();
+            }
+			else
+			{
+				// Process each result
+	            foreach (var result in results["data"])
+	            {
+	            	
+	                // this can be a string or null
+	                string framework = (string)result["framework"];
+	                string language = (string)result["language"];
+	                string link = (string)result["link"];
+	                string description = (string)result["description"];
+	
+	                Console.WriteLine("Framework: {0}\n" +
+	                                  "Language: {1}\n" +
+	                                  "Link: {2}\n" +
+	                                  "Description: {3}\n\n", framework, language, link, description);
+	            }
+	            
+	            // write framework totals
+				Console.WriteLine(showTotalFrameworks(results));
+				
+				Console.Write("Press any key to continue . . . \n\n");
+				Console.ReadKey(true);
+	
+				startMenu();
+			}
+			
+		}
+		
+		/*
+		 * 	Return Total frameworks
+		 */
+		public static string showTotalFrameworks(JObject results)
+		{
+			return "Total Frameworks: " + results["items"];
+		}
+		
+		/*
+		 * 	Return Error Handling
+		 */
+		public static string noResultsFramework()
+		{
+			return "There were no search results found.";
+		}
+
+		/*
+		 * 	Basic Start Menu
+		 */
+		public static void startMenu()
+		{
+			// start menu
+			Console.WriteLine("Select Option Below:\n\n" +
+			                  "A - Show All Frameworks\n" +
+			                  "S - Search\n" +
+			                  "Q - Quit\n\n");
+			
+			Console.Write("Enter Option: ");
+			
+			var input = Console.ReadKey();
+			
+			switch (input.Key) //Switch on Key enum
+			{
+			    case ConsoleKey.A:
+					
+					showAllResults(downloadJSON());
+					
+			        break;
+			    case ConsoleKey.S:
+			        
+			        searchFramework();
+			        
+			        break;
+			    case ConsoleKey.Q:
+			        // exit application
+			        break;
+			    default:
+			        // clear console
+					clearConsole();
+			        startMenu();
+			        break;
+			}
+			
+		}
+		
+		/*
+		 * 	Basic Terminal Clear function
+		 */
+		public static void clearConsole()
+		{
+			// clear console
+			Console.Clear();
+		}
+		
+		/*
+		 * 	Prompt Search For Framework
+		 */
+		public static void searchFramework()
+		{
+			// clear console
+			clearConsole();
+			
+			Console.Write("Enter Framework to Search: ");
+			var frame = Console.ReadLine();
+			
+			String searchQ = frame.ToString().Trim();
+			if (searchQ.Length <= 0)
+			{
+				// repeat if failed
+				searchFramework();
+			}
+			else
+			{
+				searchQ = searchQ.ToLower();
+				
+				showAllResults(downloadSearch(searchQ));
+			}
+		}
+		
+	}
+}
